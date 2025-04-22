@@ -14,18 +14,20 @@ public class Principal {
 		
 		int numero;
                 
-                try {
-                    numero = sc.nextInt();
-                    }catch (Exception e){
-                    System.out.println("El dato introducido no es un número");
-                    return;
-                }
-		
-		new CalculosMatematicos().calculos(numero);
+    try {
+        numero = sc.nextInt();
+        }catch (Exception e){
+        System.out.println("El dato introducido no es un número");
+        return;
+    }
                 
-                Random r = new Random();
-                int numAleatorio = r.nextInt(numero)+1;
-                new CalculosMatematicos().calcularMCD(numero, numAleatorio);
+		CalculosMatematicos misCalculosMatematicos = new CalculosMatematicos();
+                
+    misCalculosMatematicos.calculosRefactorizados(numero);
+    
+    Random r = new Random();
+    int numAleatorio = r.nextInt(numero)+1;
+    new CalculosMatematicos().calcularMCD(numero, numAleatorio);
 
 	}
 
