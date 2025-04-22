@@ -1,5 +1,6 @@
 package ElvisDanciu;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Principal {
@@ -13,16 +14,20 @@ public class Principal {
 		
 		int numero;
                 
-                try {
-                    numero = sc.nextInt();
-                    }catch (Exception e){
-                    System.out.println("El dato introducido no es un número");
-                    return;
-                }
-		
+    try {
+        numero = sc.nextInt();
+        }catch (Exception e){
+        System.out.println("El dato introducido no es un número");
+        return;
+    }
+                
 		CalculosMatematicos misCalculosMatematicos = new CalculosMatematicos();
                 
-                misCalculosMatematicos.calculosRefactorizados(numero);
+    misCalculosMatematicos.calculosRefactorizados(numero);
+    
+    Random r = new Random();
+    int numAleatorio = r.nextInt(numero)+1;
+    new CalculosMatematicos().calcularMCD(numero, numAleatorio);
 
 	}
 

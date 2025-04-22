@@ -35,7 +35,7 @@ public class CalculosMatematicos {
 		
 		System.out.println("Los factoriales primos del número introducido son: "+miArray);
 		
-                confirmarPrimo(numero, noEsPrimo);
+    confirmarPrimo(numero, noEsPrimo);
 	}			
 
         private void confirmarPrimo(int numero, boolean noEsPrimo) {
@@ -51,4 +51,16 @@ public class CalculosMatematicos {
                 System.out.println("El número "+numero+ " NO es primo");
             } else System.out.println("El número "+numero+ " SI es primo");
         }
+  
+          // Método para calcular el MCD usando el algoritmo de Euclides
+        public void calcularMCD(int numA, int numB) {
+            int a = numA, b = numB;
+            while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+            }
+            System.out.println("El máximo común divisor de "+numA+ " y "+numB+" es " + a);
+        }
+
 }
