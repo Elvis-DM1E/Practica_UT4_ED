@@ -7,8 +7,8 @@ public class CalculosMatematicos {
 	public CalculosMatematicos() {		
 	}
 
-	public void calculos(int numero) {
-		
+	public void calculosRefactorizados(int numero) {
+
 		
 		// Calculamos los factoriales primos
 		ArrayList<Integer> miArray = new ArrayList();
@@ -35,16 +35,20 @@ public class CalculosMatematicos {
 		
 		System.out.println("Los factoriales primos del número introducido son: "+miArray);
 		
-		for (int  i = 2; i< numero ; i++) {
-			noEsPrimo = false;			
-			if(numero%i==0) {
-				noEsPrimo = true;				
-				i=numero;
-			}
-		}
-		
-		if(noEsPrimo) {
-			System.out.println("El número "+numero+ " NO es primo");
-		} else System.out.println("El número "+numero+ " SI es primo");
+                confirmarPrimo(numero, noEsPrimo);
 	}			
+
+        private void confirmarPrimo(int numero, boolean noEsPrimo) {
+            for (int  i = 2; i< numero ; i++) {
+                noEsPrimo = false;
+                if(numero%i==0) {
+                    noEsPrimo = true;
+                    i=numero;
+                }
+            }
+
+            if(noEsPrimo) {
+                System.out.println("El número "+numero+ " NO es primo");
+            } else System.out.println("El número "+numero+ " SI es primo");
+        }
 }
